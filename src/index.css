@@ -1,13 +1,21 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    @apply transition-colors duration-300;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html .rdrCalendarWrapper{
+    @apply dark:bg-gray-800;
+}
+html .rdrDateDisplayWrapper{
+    @apply dark:bg-gray-700;
+}
+html .rdrMonthAndYearPickers select{
+    @apply dark:bg-white dark:hover:bg-gray-200;
+}
+
+html .rdrDayNumber span {
+    @apply dark:text-white
 }

@@ -1,0 +1,12 @@
+.unanimate-dropdown {
+    transform: translateY(-10px);    
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.animate-dropdown{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0px);
+}

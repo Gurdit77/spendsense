@@ -1,0 +1,36 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import './style.css';
+
+const Textarea = ({ placeholder, required, label, setData, value, name, rows }) => {
+    let classes = 'flex flex-col-reverse';    
+    return (
+        <>
+            <div className={classes}>
+                <textarea name={name}  placeholder={placeholder} value={value} onChange={(e) => { setData(e.target.value) }} required={required}
+                rows={rows}
+                className="bg-gray-50 border transition duration-300 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >                    
+                </textarea>         
+                <label className="block mb-2 text-sm  transition duration-300 font-medium text-gray-900 dark:text-white">
+                    {label}
+                </label>
+            </div>
+        </>
+    )
+}
+Textarea.propTypes = {
+    rows:PropTypes.number,    
+    placeholder: PropTypes.string,
+    required: PropTypes.bool,
+    setData:PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired
+};
+Textarea.defaultProps = {
+    rows:5,
+    placeholder: "blue",
+    required: false,
+    label: "Email"
+};
+export default Textarea;
